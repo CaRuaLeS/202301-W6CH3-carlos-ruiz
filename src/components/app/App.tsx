@@ -2,7 +2,6 @@ import React from "react";
 import { Actions } from "../actions/actions";
 import { Info } from "../info/info";
 import { Keyboard } from "../keyboard/keyboard";
-import "./App.css";
 
 function App() {
   return (
