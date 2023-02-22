@@ -1,43 +1,35 @@
 //import { useContext } from "react";
 //import { PhoneContext } from "../../context/phone-context";
+import * as ac from "../../reducer/phone.actions.creator";
+
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store/store";
 
 export function Key() {
-  //const { handlerClickNumber, handlerDelete } = useContext(PhoneContext);
+  const dispatch = useDispatch<AppDispatch>();
+
+  const nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+  const handlerNumber = (number: string) => {
+    dispatch(ac.clickNumberCreator(number));
+  };
+  const handlerDelete = () => {
+    dispatch(ac.deleteNumberCreator());
+  };
 
   return (
     <>
+      {nums.map((num) => (
+        <li>
+          <button className="key" onClick={() => handlerNumber(num)}>
+            {num}
+          </button>
+        </li>
+      ))}
       <li>
-        <button className="key">1</button>
-      </li>
-      <li>
-        <button className="key">2</button>
-      </li>
-      <li>
-        <button className="key">3</button>
-      </li>
-      <li>
-        <button className="key">4</button>
-      </li>
-      <li>
-        <button className="key">5</button>
-      </li>
-      <li>
-        <button className="key">6</button>
-      </li>
-      <li>
-        <button className="key">7</button>
-      </li>
-      <li>
-        <button className="key">8</button>
-      </li>
-      <li>
-        <button className="key">9</button>
-      </li>
-      <li>
-        <button className="key">0</button>
-      </li>
-      <li>
-        <button className="key big">delete</button>
+        <button className="key big" onClick={() => handlerDelete()}>
+          delete
+        </button>
       </li>
     </>
   );
