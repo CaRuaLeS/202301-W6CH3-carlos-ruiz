@@ -20,7 +20,7 @@ export function Key() {
   return (
     <>
       {nums.map((num) => (
-        <li>
+        <li key={num}>
           <button className="key" onClick={() => handlerNumber(num)}>
             {num}
           </button>
