@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { store } from "../../store/store";
 import { Key } from "./key";
 
-describe("Given the key component ", () => {
+describe("Given the key component", () => {
   describe("When the component is render", () => {
     test("Then it should render", () => {
       render(

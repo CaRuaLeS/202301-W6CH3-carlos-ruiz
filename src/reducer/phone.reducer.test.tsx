@@ -4,7 +4,7 @@ import {
 } from "./phone.actions.creator";
 import { phoneReducer } from "./phone.reducer";
 
-describe("Given the phoneReducer ", () => {
+describe("Given the phoneReducer", () => {
   describe("When we set an initial state on the action", () => {
     test("Then if it clicks on a number it should be a change state", () => {
       let result = phoneReducer("", clickNumberCreator("8"));
