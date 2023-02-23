@@ -7,6 +7,6 @@ export const clickNumberCreator = createAction<string>(
 
 export const deleteNumberCreator = createAction(phoneActions.deleteNumber);
 
-export const callCreator = createAction<boolean>(phoneActions.call);
-
-export const hangCreator = createAction<boolean>(phoneActions.hang);
+export const changeCallCreator = createAction<boolean>(
+  phoneActions.changeCallState
+);

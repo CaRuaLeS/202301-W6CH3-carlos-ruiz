@@ -6,7 +6,8 @@ export function Actions() {
     <>
       <div className="actions">
         <Display></Display>
-        <Action></Action>
+        <Action type="call"></Action>
+        <Action type="hang"></Action>
       </div>
     </>
   );

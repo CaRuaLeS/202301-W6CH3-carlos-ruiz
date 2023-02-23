@@ -20,13 +20,9 @@ export const phoneReducer = createReducer(initialState, (builder) => {
     ...state,
     phoneNumber: initialState.phoneNumber,
   }));
-  builder.addCase(ac.callCreator, (state) => ({
+  builder.addCase(ac.changeCallCreator, (state) => ({
     ...state,
-    isCalling: true,
-  }));
-  builder.addCase(ac.hangCreator, (state) => ({
-    ...state,
-    isCalling: false,
+    isCalling: !state.isCalling,
   }));
 
   builder.addDefaultCase((state) => state);
