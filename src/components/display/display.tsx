@@ -1,11 +1,12 @@
-//import { useContext } from "react";
-//import { PhoneContext } from "../../context/phone-context";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 export function Display() {
-  //const { keyboard } = useContext(PhoneContext);
+  const numbers = useSelector((state: RootState) => state.phone);
+
   return (
     <>
-      <span className="number">{/*keyboard*/}</span>
+      <span className="number">{numbers}</span>
     </>
   );
 }
